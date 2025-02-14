@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Request Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="tabs">
+        <button class="tab" id="formTab">ATM Request Form</button>
+        <button class="tab" id="statusTab">Request Status</button>
+    </div>
+
+    <div id="formSection">
+        <h2>ATM Request Form</h2>
+        <form id="atm-form">
+            <label for="vehicleSelect">Vehicle Number</label>
+            <select id="vehicleSelect" required>
+                <option value="" disabled selected>Select Vehicle Number</option>
+            </select>
+
+            <label for="cardNumber">Card Number</label>
+            <input type="text" id="cardNumber" readonly required>
+
+            <label for="amount">Amount</label>
+            <input type="text" id="amount" required>
+
+            <label for="comment">Comment</label>
+            <textarea id="comment" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div class="response-message" id="response-message"></div>
+    </div>
+
+    <div id="statusSection" style="display:none;">
+        <h2>Request Status</h2>
+    
+        <!-- Search Input Field -->
+        <label for="searchField">Search by Vehicle Number</label>
+        <input type="text" id="searchField" placeholder="Enter vehicle number" />
+    
+        <table id="statusTable" style="width: 100%; border-collapse: collapse;">
+            <!-- Table will be populated dynamically -->
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
